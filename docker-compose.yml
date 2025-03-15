@@ -1,0 +1,20 @@
+services:
+  irlcord:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: irlcord-bot
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=UTC
+    # Copy the example config if no config exists
+    command: >
+      sh -c "if [ ! -f /app/config.json ]; then
+             echo 'Creating default config.json';
+             cp /app/config.json.example /app/config.json;
+             fi && 
+             ./irlcord-bot -config /app/config.json" 

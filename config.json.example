@@ -1,0 +1,32 @@
+{
+  "discord_token": "YOUR_DISCORD_BOT_TOKEN",
+  "database_path": "data/irlcord.db",
+  "prefix": "!",
+  "admin_ids": ["YOUR_DISCORD_USER_ID"],
+  "guild_id": "YOUR_DISCORD_SERVER_ID",
+  "terminology": {
+    "group_singular": "Group",
+    "group_plural": "Groups",
+    "event_singular": "Event",
+    "event_plural": "Events"
+  },
+  "channels": {
+    "log_channel": "",
+    "admin_channel": "",
+    "events_channel": ""
+  },
+  "commands": {
+    "group_create": "!group create",
+    "group_join": "!group join",
+    "group_leave": "!group leave",
+    "group_info": "!group info",
+    "group_modify": "!group modify",
+    "event_create": "!event create",
+    "event_modify": "!event modify",
+    "event_confirm": "!event confirm",
+    "event_unconfirm": "!event unconfirm",
+    "event_waitlist": "!event waitlist",
+    "event_info": "!event info",
+    "event_change_host": "!event changehost"
+  }
+} 
