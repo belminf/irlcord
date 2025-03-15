@@ -1,13 +1,20 @@
 services:
-  bot:
-    build: .
+  irlcord:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: irlcord-bot
     restart: unless-stopped
     volumes:
-      - ./config.yaml:/app/config.yaml
       - ./data:/app/data
+    ports:
+      - "8080:8080"
     environment:
       - TZ=UTC
-      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
-    command: python -m irlcord.main
-    env_file:
-      - .env
+    # Copy the example config if no config exists
+    command: >
+      sh -c "if [ ! -f /app/config.json ]; then
+             echo 'Creating default config.json';
+             cp /app/config.json.example /app/config.json;
+             fi && 
+             ./irlcord-bot -config /app/config.json" 

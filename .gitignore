@@ -118,4 +118,37 @@ irlcord.db
 .idea/
 .vscode/
 *.swp
-*.swo 
+*.swo
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+irlcord-bot
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# Config files
+config.json
+
+# Database files
+*.db
+data/
+
+# Logs
+*.log
+
+# OS specific files
+Thumbs.db 
