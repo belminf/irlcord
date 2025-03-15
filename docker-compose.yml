@@ -1,0 +1,13 @@
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./config.yaml:/app/config.yaml
+      - ./data:/app/data
+    environment:
+      - TZ=UTC
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+    command: python -m irlcord.main
+    env_file:
+      - .env
